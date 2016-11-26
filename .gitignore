@@ -90,3 +90,6 @@ ENV/
 
 # TensorFlow data
 data/
+
+# Python Notebook
+Untitled*.ipynb
