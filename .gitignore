@@ -90,7 +90,7 @@ ENV/
 
 # TensorFlow data
 data/
-checkpoints/
+#checkpoints/
 
 # Python Notebook
 Untitled*.ipynb
