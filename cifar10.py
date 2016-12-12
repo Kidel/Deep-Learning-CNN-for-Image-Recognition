@@ -5,29 +5,6 @@
 #
 # Implemented in Python 3.5
 #
-# Usage:
-# 1) Set the variable data_path with the desired storage path.
-# 2) Call maybe_download_and_extract() to download the data-set
-#    if it is not already located in the given data_path.
-# 3) Call load_class_names() to get an array of the class-names.
-# 4) Call load_training_data() and load_test_data() to get
-#    the images, class-numbers and one-hot encoded class-labels
-#    for the training-set and test-set.
-# 5) Use the returned data in your own program.
-#
-# Format:
-# The images for the training- and test-sets are returned as 4-dim numpy
-# arrays each with the shape: [image_number, height, width, channel]
-# where the individual pixels are floats between 0.0 and 1.0.
-#
-########################################################################
-#
-# This file is part of the TensorFlow Tutorials available at:
-#
-# https://github.com/Hvass-Labs/TensorFlow-Tutorials
-#
-# Published under the MIT License. See the file LICENSE for details.
-#
 # Copyright 2016 by Magnus Erik Hvass Pedersen
 #
 ########################################################################

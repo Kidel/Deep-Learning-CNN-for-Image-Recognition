@@ -4,14 +4,6 @@
 #
 # Implemented in Python 3.5
 #
-########################################################################
-#
-# This file is part of the TensorFlow Tutorials available at:
-#
-# https://github.com/Hvass-Labs/TensorFlow-Tutorials
-#
-# Published under the MIT License. See the file LICENSE for details.
-#
 # Copyright 2016 by Magnus Erik Hvass Pedersen
 #
 ########################################################################
