@@ -151,12 +151,12 @@ class Util(object):
         # Plot some examples of mis-classifications, if desired.
         if show_example_errors:
             print("Example errors:")
-            self.plot_example_errors(self=self, data=data, cls_pred=cls_pred, correct=correct)
+            self.plot_example_errors(data=data, cls_pred=cls_pred, correct=correct)
 
         # Plot the confusion matrix, if desired.
         if show_confusion_matrix:
             print("Confusion Matrix:")
-            self.plot_confusion_matrix(self=self, data=data, num_classes=num_classes, cls_pred=cls_pred)
+            self.plot_confusion_matrix(data=data, num_classes=num_classes, cls_pred=cls_pred)
 
 
     def plot_confusion_matrix(self, data, num_classes, cls_pred):
@@ -213,7 +213,7 @@ class Util(object):
         cls_true = data.test.cls[incorrect]
 
         # Plot the first 9 images.
-        self.plot_images(self=self, images=images[0:9],
+        self.plot_images(images=images[0:9],
                     cls_true=cls_true[0:9],
                     cls_pred=cls_pred[0:9])
 
