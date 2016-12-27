@@ -23,11 +23,13 @@ import os
 
 # Directory where you want to download and save the data-set.
 # Set this before you start calling any of the functions below.
-dataset_folder = ""
-data_dir = "data/" + dataset_folder
+data_dir = "data/"
 
 # URL for the data-set on the internet.
 data_url = ""
+
+# Dataset name
+dataset_name = ""
 
 ########################################################################
 # Various constants for the size of the images.
@@ -52,7 +54,7 @@ num_classes = 3
 
 def maybe_download_and_extract():
     """
-    Download and extract the Knifey-Spoony data-set if it doesn't already exist
+    Download and extract the data-set if it doesn't already exist
     in data_dir (set this variable first to the desired directory).
     """
 
@@ -61,21 +63,21 @@ def maybe_download_and_extract():
 
 def load():
     """
-    Load the Knifey-Spoony data-set into memory.
+    Load the data-set into memory.
 
     This uses a cache-file which is reloaded if it already exists,
-    otherwise the Knifey-Spoony data-set is created and saved to
+    otherwise the data-set is created and saved to
     the cache-file. The reason for using a cache-file is that it
     ensure the files are ordered consistently each time the data-set
     is loaded. This is important when the data-set is used in
     combination with Transfer Learning as is done in Tutorial #09.
 
     :return:
-        A DataSet-object for the Knifey-Spoony data-set.
+        A DataSet-object for the data-set.
     """
 
     # Path for the cache-file.
-    cache_path = os.path.join(data_dir, "knifey-spoony.pkl")
+    cache_path = os.path.join(data_dir, dataset_name + ".pkl")
 
     # If the DataSet-object already exists in a cache-file
     # then load it, otherwise create a new object and save
