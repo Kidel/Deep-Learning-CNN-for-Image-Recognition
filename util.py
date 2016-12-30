@@ -339,3 +339,37 @@ class Util(object):
         # Ensure the plot is shown correctly with multiple plots
         # in a single Notebook cell.
         plt.show()
+        
+        
+    def plot_transfer_values(self, i, images, transfer_values):
+        print("Input image:")
+
+        # Plot the i'th image from the test-set.
+        plt.imshow(images[i], interpolation='nearest')
+        plt.show()
+
+        print("Transfer-values for the image using Inception model:")
+
+        # Transform the transfer-values into an image.
+        img = transfer_values[i]
+        img = img.reshape((32, 64))
+
+        # Plot the image for the transfer-values.
+        plt.imshow(img, interpolation='nearest', cmap='Reds')
+        plt.show()
+        
+    def plot_scatter(self, values, cls, num_classes):
+        # Create a color-map with a different color for each class.
+        import matplotlib.cm as cm
+        cmap = cm.rainbow(np.linspace(0.0, 1.0, num_classes))
+
+        # Get the color for each sample.
+        colors = cmap[cls]
+
+        # Extract the x- and y-values.
+        x = values[:, 0]
+        y = values[:, 1]
+
+        # Plot it.
+        plt.scatter(x, y, color=colors)
+        plt.show()
