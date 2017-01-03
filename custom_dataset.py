@@ -23,8 +23,8 @@ import os
 
 # Directory where you want to download and save the data-set.
 # Set this before you start calling any of the functions below.
-data_name = ""
-data_dir = "data/knifey-spoony/" + data_name
+dataset_folder = ""
+data_dir = "data/" + dataset_folder
 
 # URL for the data-set on the internet.
 data_url = ""
