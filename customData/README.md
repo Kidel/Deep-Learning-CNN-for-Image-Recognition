@@ -2,7 +2,7 @@
 This folder contains custom datasets.
 
 ## apple-drive-duck
-This dataset has been obtained sampling some videos and contains pictures of apples, hard drives and rubber ducks. 
+This dataset was obtained sampling some videos and contains pictures of apples, hard drives and rubber ducks. 
 Those objects were chosen according to ImageNet strengths and weaknesses. 
 ImageNet has a lot of pictures of apples (24 categories with thousands of images each), 
 very few hard drive images (68 total) and zero rubber ducks (maybe there are collateral rubber ducks in some bathroom or toy images, but ImageNet has no rubber duck class, so the actual number is zero or close to zero). 
