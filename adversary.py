@@ -209,6 +209,15 @@ class Adversary(object):
         # Ensure the plot is shown correctly with multiple plots
         # in a single Notebook cell.
         plt.show()
+        #from PIL import Image
+        #import scipy.misc
+        #image = noisy_image.astype(np.uint8)
+        #pathJpg = os.path.join("adversaryImages/", name_source + ".jpg")
+        #pathPng = os.path.join("adversaryImages/", name_source + ".png")
+        #img = Image.fromarray(image, 'RGB')
+        #img.save(pathJpg)
+        #img = scipy.misc.toimage(image, high=np.max(image), low=np.min(image), mode='RGB')
+        #img.save(pathPng)
         
     def adversary_example(self, session, y_pred, resized_image, model, gradient, pl_cls_target, 
                           image_path, cls_target,
