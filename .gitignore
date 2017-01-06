@@ -92,6 +92,8 @@ ENV/
 data/
 checkpoints/
 inception/
+temp/
+tmp.prototxt
 cache/
 
 # Python Notebook
