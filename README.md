@@ -1,6 +1,7 @@
-# Deep Learning - Convolutional Neural Network for Image Recognition
-Classification of images or video input using Google TensorFlow. 
-Research project on Convolutional Neural Networks, feature extraction, transfer learning, adversary noise and DeepDream. 
+# Deep Learning
+# Convolutional Neural Network for Image Recognition
+Classification of images or video input using **Google TensorFlow**. 
+Research project on Convolutional Neural Networks, feature extraction, transfer learning, adversary noise and *DeepDream*. 
 
 In notebooks from 01 to 03 we mainly followed tutorials, with some changes, in order to learn how to use TensorFlow to build Convolutional Neural Networks for OCR and image recognition. 
 
