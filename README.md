@@ -12,3 +12,5 @@ Notebooks 03 and 04 use PrettyTensor 0.6.2.
 Notebook 07 uses caffe library and some modified code from [google/deepdream](https://github.com/google/deepdream).
 
 Special thanks and credits to [Hvass-Labs](https://github.com/Hvass-Labs) for well made tutorials and libraries. 
+
+Notebooks were made on 3 different Docker machines running different environments, thanks to [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks/tree/master/tensorflow-notebook) and [saturnism/deepdream-docker](https://github.com/saturnism/deepdream-docker).
