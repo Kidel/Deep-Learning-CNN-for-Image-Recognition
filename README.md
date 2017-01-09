@@ -1,5 +1,4 @@
-# Deep Learning
-# Convolutional Neural Network for Image Recognition
+# Deep Learning - CNN for Image Recognition
 Classification of images or video input using **Google TensorFlow**. 
 Research project on Convolutional Neural Networks, feature extraction, transfer learning, adversary noise and *DeepDream*. 
 
