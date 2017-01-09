@@ -1,3 +1,5 @@
+# code refactored from Magnus Erik Hvass Pedersen tutorials
+
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import numpy as np
