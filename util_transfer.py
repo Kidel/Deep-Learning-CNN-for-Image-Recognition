@@ -21,7 +21,7 @@ class UtilTransfer(object):
         y_batch = labels_train[idx]
         return x_batch, y_batch
     
-    def optimize(self, num_iterations, transfer_values_train, train_batch_size, labels_train, session, global_step, optimizer, accuracy):
+    def optimize(self, num_iterations, transfer_values_train, train_batch_size, labels_train, session, global_step, optimizer, accuracy, x, y_true):
         start_time = time.time()
 
         for i in range(num_iterations):
@@ -85,39 +85,16 @@ class UtilTransfer(object):
         # in a single Notebook cell.
         plt.show()
         
-    def predict_cls(self, transfer_values, labels, cls_true, num_images, batch_size, session, y_pred_cls):
-        # Number of images.
-        num_images = len(transfer_values)
-        # Allocate an array for the predicted classes which
-        # will be calculated in batches and filled into this array.
-        cls_pred = np.zeros(shape=num_images, dtype=np.int)
-        # Now calculate the predicted classes for the batches.
-        i = 0
-        while i < num_images:
-            # The ending index for the next batch is denoted j.
-            j = min(i + batch_size, num_images)
-            # Create a feed-dict with the images and labels
-            # between index i and j.
-            feed_dict = {x: transfer_values[i:j],
-                         y_true: labels[i:j]}
-            # Calculate the predicted class using TensorFlow.
-            cls_pred[i:j] = session.run(y_pred_cls, feed_dict=feed_dict)
-            # Set the start-index for the next batch to the end-index of the current batch.
-            i = j
-        # Create a boolean array whether each image is correctly classified.
-        correct = (cls_true == cls_pred)
-        return correct, cls_pred
-
-    def predict_cls_test(self, transfer_values_test, labels_test, cls_test, num_images, batch_size, session, y_pred_cls):
-        return self.predict_cls(transfer_values_test, labels_test, cls_test, num_images, batch_size, session, y_pred_cls)
+    def predict_cls_test(self, transfer_values_test, labels_test, cls_test, predict_cls):
+        return predict_cls(transfer_values_test, labels_test, cls_test)
     
     def classification_accuracy(self, correct):
         return correct.mean(), correct.sum()
     
-    def print_test_accuracy(self, show_example_errors, show_confusion_matrix, transfer_values_test, labels_test, cls_test, num_images, batch_size, session, y_pred_cls):
+    def print_test_accuracy(self, show_example_errors, show_confusion_matrix, transfer_values_test, labels_test, cls_test, batch_size, images_test, plot_images, images, num_classes, class_names, predict_cls):
         # For all the images in the test-set,
         # calculate the predicted classes and whether they are correct.
-        correct, cls_pred = self.predict_cls_test(transfer_values_test, labels_test, cls_test, num_images, batch_size, session, y_pred_cls)
+        correct, cls_pred = self.predict_cls_test(transfer_values_test, labels_test, cls_test, predict_cls)
         # Classification accuracy and the number of correct classifications.
         acc, num_correct = self.classification_accuracy(correct)
         # Number of images being classified.
@@ -128,8 +105,8 @@ class UtilTransfer(object):
         # Plot some examples of mis-classifications, if desired.
         if show_example_errors:
             print("Example errors:")
-            plot_example_errors(cls_pred=cls_pred, correct=correct)
+            self.plot_example_errors(cls_pred, correct, images_test, cls_test, plot_images, images)
         # Plot the confusion matrix, if desired.
         if show_confusion_matrix:
             print("Confusion Matrix:")
-            plot_confusion_matrix(cls_pred=cls_pred)
+            self.plot_confusion_matrix(cls_pred, cls_test, num_classes, class_names)
