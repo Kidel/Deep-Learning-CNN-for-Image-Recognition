@@ -114,7 +114,7 @@ class UtilTransfer(object):
     def classification_accuracy(self, correct):
         return correct.mean(), correct.sum()
     
-    def print_test_accuracy(self, show_example_errors=False, show_confusion_matrix=False, transfer_values_test, labels_test, cls_test, num_images, batch_size, session, y_pred_cls):
+    def print_test_accuracy(self, show_example_errors, show_confusion_matrix, transfer_values_test, labels_test, cls_test, num_images, batch_size, session, y_pred_cls):
         # For all the images in the test-set,
         # calculate the predicted classes and whether they are correct.
         correct, cls_pred = self.predict_cls_test(transfer_values_test, labels_test, cls_test, num_images, batch_size, session, y_pred_cls)
