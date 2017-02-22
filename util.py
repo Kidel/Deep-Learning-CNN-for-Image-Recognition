@@ -42,6 +42,20 @@ class Util(object):
         # Ensure the plot is shown correctly with multiple plots
         # in a single Notebook cell.
         plt.show()
+    
+    def plot_history(self, history, metric='acc', loc='lower right'): 
+        # list all data in history
+        # print(history.history.keys())
+        # summarize history for accuracy
+        plt.plot(history.history[metric])
+        plt.plot(history.history['val_'+metric])
+        if metric == 'acc': 
+            metric = 'accuracy'
+        plt.title('model ' + metric)
+        plt.ylabel(metric)
+        plt.xlabel('epoch')
+        plt.legend(['train', 'test'], loc=loc)
+        plt.show()
 
     def plot_images_2(self, images, cls_true, class_names, cls_pred=None, smooth=True):
         assert len(images) == len(cls_true) == 9
