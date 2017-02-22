@@ -95,6 +95,11 @@ inception/
 temp/
 tmp.prototxt
 cache/
+Keras/data/
+Keras/inception/
+Keras/temp/
+Keras/tmp.prototxt
+Keras/cache/
 
 # Python Notebook
 Untitled*.ipynb
