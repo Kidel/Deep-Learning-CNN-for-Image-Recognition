@@ -4,6 +4,8 @@ Research project on Convolutional Neural Networks, feature extraction, transfer 
 
 In notebooks from 01 to 03 we mainly followed tutorials, with some changes and many observations, in order to learn how to use TensorFlow to build Convolutional Neural Networks for OCR and image recognition. Later notebooks follow our project specifications, while notebooks 06 and 07 were used for some more facoltative observations. 
 
+The project was completed around February 2017.
+
 ## Keras
 Keras subfolder contains more advanced experiments done with Keras. The first 4 notebooks are about MNIST, with single column and multi column CNNs and dataset expansion. Notebook 5 is an implementation of Transfer Learning using Keras with CIFAR-10.
 
